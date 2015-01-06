@@ -16,12 +16,16 @@ namespace Generics
         {
             this.mobieleNummer = mobieleNummer;
             this.schoenmaat = schoenmaat;
-            //enzz..
+            this.haarKleur = haarKleur;
         }
 
         public void Kenmerken()
         {
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Mobiele nummer: {0}", this.mobieleNummer);
+            Console.WriteLine("Mobiele nummer: {0}", this.haarKleur);
+            Console.WriteLine("Mobiele nummer: {0}", this.schoenmaat);
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
             // enz....
         }
     }
