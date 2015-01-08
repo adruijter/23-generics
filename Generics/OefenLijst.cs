@@ -11,7 +11,10 @@ namespace Generics
         private U[] lijst;
 
         //Properties
-
+        public U[] Lijst
+        {
+            get { return this.lijst; }
+        }
 
         //Constructor
         public OefenLijst(U item)
@@ -29,7 +32,7 @@ namespace Generics
             {
                 temp[i] = lijst[i];
             }
-            temp[this.lijst.Length - 1] = item;
+            temp[temp.Length - 1] = item;
             lijst = temp;
         }
 

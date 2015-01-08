@@ -177,9 +177,21 @@ namespace Generics
             OefenLijst<float> rapportCijfers = new OefenLijst<float>(10f);
             OefenLijst<string> boodschappenlijstje = new OefenLijst<string>("Bloemkool");
             OefenLijst<Persoonskenmerken> presentielijst = 
-                new OefenLijst<Persoonskenmerken>(new Persoonskenmerken(01234565, 9.5f, "zwart")); 
+                new OefenLijst<Persoonskenmerken>(new Persoonskenmerken(01234565, 9.5f, "zwart"));
 
+            rapportCijfers.Add(7.5f);
+            boodschappenlijstje.Add("Spaghetti");
 
+            foreach (float cijfer in rapportCijfers.Lijst)
+            {
+                Console.WriteLine("Cijfers is: {0}",  cijfer);
+            }
+
+            foreach (string boodschap in boodschappenlijstje.Lijst)
+            {
+                Console.WriteLine("Boodschap is: {0}", boodschap);
+            }
+                  
             
             Console.ReadLine();
         }
