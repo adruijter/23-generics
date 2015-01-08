@@ -58,6 +58,7 @@ namespace Generics
             {
                 Console.Write(letter);
             }
+
             Console.WriteLine("");
 
             // Maak een class persoonskenmerken met de fields, mobielnummer, schoenmaat, haarkleur.
@@ -82,11 +83,96 @@ namespace Generics
                 pk.Kenmerken();
             }
 
+            Dictionary<string, int> telefoonboek;
+            telefoonboek = new Dictionary<string, int>();
+
+            telefoonboek.Add("Ruijter, A. de", 0251674210);
+            telefoonboek.Add("Braak, M. ter", 0301234567);
+            telefoonboek.Add("Telnekes, H.", 0201234321);
+            telefoonboek.Add("Nooij, J.", 0402132435);
+            telefoonboek.Add("Karsten, K.", 0351232435);
+
+            int nummer = telefoonboek["Ruijter, A. de"];
+            int nummer1 = telefoonboek["Nooij, J."];
+            Console.WriteLine("Het opgeslagen nummer is: {0}", nummer1);
+
+            string naam = "Nooij, J.";
+
+            foreach (KeyValuePair<string, int> item in telefoonboek)
+            {
+                if ( item.Key != naam)
+                {
+                    Console.WriteLine("De naam is: {0} en het telefoonummer is: {1}", item.Key, item.Value);
+                }
+            }
+            //telefoonboek.Remove(naam);
+
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+            for (int i = 0; i < telefoonboek.Count; i++)
+            {
+                if (telefoonboek.ElementAt(i).Key == naam)
+                {
+                    Console.WriteLine("Het record {0} met telefoonnummer {1} is verwijderd",
+                                       telefoonboek.ElementAt(i).Key,
+                                       telefoonboek.ElementAt(i).Value);
+                    telefoonboek.Remove(telefoonboek.ElementAt(i).Key);
+                }
+                else
+                {
+                    Console.WriteLine("De naam is: {0} en het telefoonummer is: {1}", 
+                                       telefoonboek.ElementAt(i).Key,
+                                       telefoonboek.ElementAt(i).Value);
+                }
+            }
+
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             
+            Dictionary<int, string> getallenDictionary = new Dictionary<int, string>();
+
+            getallenDictionary.Add(0, "nul");
+            getallenDictionary.Add(1, "een");
+            getallenDictionary.Add(2, "twee");
+            getallenDictionary.Add(3, "drie");
+            getallenDictionary.Add(4, "vier");
+            getallenDictionary.Add(5, "vijf");
+            getallenDictionary.Add(6, "zes");
+            getallenDictionary.Add(7, "zeven");
+            getallenDictionary.Add(8, "acht");
+            getallenDictionary.Add(9, "negen");
+            getallenDictionary.Add(10, "tien");
+            //Enz... getallen 1 t/m 10
+
+            foreach ( KeyValuePair<int, string> getal in getallenDictionary)
+            {
+                Console.WriteLine("Het getal {0} schrijf je zo: {1}", getal.Key, getal.Value);
+            }
+
+            // Koppel een naam aan een class persoonskenmerken met een dictionary
+            // Geef deze weer met een foreach loop
+
+            Dictionary<string, Persoonskenmerken> persoonsInfo;
+            persoonsInfo = new Dictionary<string, Persoonskenmerken>();
+
+            persoonsInfo.Add("Arjan", new Persoonskenmerken(0612324356, 9.5f, "grijs"));
+            persoonsInfo.Add("Bert", new Persoonskenmerken(0654342312, 6.5f, "blond"));
+            persoonsInfo.Add("Hans", new Persoonskenmerken(0698456787, 10.5f, "zwart"));
+            persoonsInfo.Add("Harry", new Persoonskenmerken(0623435465, 14f, "bruin"));
+            persoonsInfo.Add("Theo", new Persoonskenmerken(0634234567, 7.5f, "roze"));
 
 
+            foreach (KeyValuePair<string, Persoonskenmerken> persoon in persoonsInfo)
+            {
+                
+                Console.WriteLine("De persoon met voornaam {0} heeft: ", persoon.Key);
+                Console.WriteLine("Mobiele nummer: " + persoon.Value.MobieleNummer );
+                Console.WriteLine("Haarkleur: " + persoon.Value.Haarkleur);
+                Console.WriteLine("Schoenmaat: " + persoon.Value.Schoenmaat);
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-
+            }
+            
+            
             Console.ReadLine();
         }
     }

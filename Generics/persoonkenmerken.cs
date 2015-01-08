@@ -12,6 +12,21 @@ namespace Generics
         private float schoenmaat;
         private string haarKleur;
 
+        //Properties
+        public int MobieleNummer
+        {
+            get { return this.mobieleNummer; }
+        }
+        public float Schoenmaat
+        {
+            get { return this.schoenmaat; }
+        }
+        public string Haarkleur
+        {
+            get { return this.haarKleur; }
+        }
+
+
         public Persoonskenmerken(int mobieleNummer, float schoenmaat, string haarKleur)
         {
             this.mobieleNummer = mobieleNummer;
@@ -23,8 +38,8 @@ namespace Generics
         {
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Mobiele nummer: {0}", this.mobieleNummer);
-            Console.WriteLine("Mobiele nummer: {0}", this.haarKleur);
-            Console.WriteLine("Mobiele nummer: {0}", this.schoenmaat);
+            Console.WriteLine("Haarkleur: {0}", this.haarKleur);
+            Console.WriteLine("Schoenmaat: {0}", this.schoenmaat);
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
             // enz....
         }
