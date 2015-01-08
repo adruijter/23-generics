@@ -171,7 +171,15 @@ namespace Generics
                 Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
             }
-            
+
+            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+            OefenLijst<float> rapportCijfers = new OefenLijst<float>(10f);
+            OefenLijst<string> boodschappenlijstje = new OefenLijst<string>("Bloemkool");
+            OefenLijst<Persoonskenmerken> presentielijst = 
+                new OefenLijst<Persoonskenmerken>(new Persoonskenmerken(01234565, 9.5f, "zwart")); 
+
+
             
             Console.ReadLine();
         }
